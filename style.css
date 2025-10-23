@@ -1,0 +1,606 @@
+/* Reset & basis */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+    font-family: 'Inter', sans-serif;
+    color: #fff;
+    background-color: #0a0a0a;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+/* Navigatiebalk */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 110px;
+    /* groter om het logo ruimte te geven */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 4rem;
+    background: rgba(10, 10, 10, 0.9);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid #1f1f1f;
+    z-index: 1000;
+}
+
+/* Groot en opvallend logo links */
+/* Groot en prominent logo zonder hinder van transparante randen */
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo-image {
+    width: 180px;
+    /* pas deze aan voor gewenste grootte */
+    height: 200px;
+    background-image: url('images/logo.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    /* vult het kader zonder afsnijden */
+    background-position: center;
+    transition: transform 0.3s ease;
+}
+
+.logo-image:hover {
+    transform: scale(1.05);
+}
+
+/* Optioneel: bij kleine schermen */
+@media (max-width: 768px) {
+    .logo-image {
+        width: 140px;
+        height: 60px;
+    }
+}
+
+/* Navigatie rechts */
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 2.5rem;
+    /* gelijkmatige ruimte tussen knoppen */
+}
+
+.nav-links a,
+.dropbtn {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1rem;
+    letter-spacing: 0.5px;
+    transition: color 0.3s ease;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-family: inherit;
+}
+
+.nav-links a:hover,
+.dropbtn:hover {
+    color: #ff6b00;
+}
+
+/* Dropdown styling */
+.dropdown {
+    position: relative;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    top: 2.5rem;
+    left: 0;
+    background-color: #141414;
+    border: 1px solid #222;
+    min-width: 160px;
+    z-index: 999;
+}
+
+.dropdown-content a {
+    display: block;
+    padding: 0.8rem 1rem;
+    color: #fff;
+    text-decoration: none;
+    font-size: 0.95rem;
+}
+
+.dropdown-content a:hover {
+    background-color: #ff6b00;
+    color: #fff;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Responsiviteit */
+@media (max-width: 900px) {
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+        height: auto;
+        padding: 1rem 2rem;
+    }
+
+    .logo img {
+        height: 60px;
+        margin-bottom: 1rem;
+    }
+
+    .nav-links {
+        flex-wrap: wrap;
+        gap: 1.5rem;
+    }
+}
+
+/* Hero sectie */
+.hero {
+    position: relative;
+    height: 100vh;
+    /* vult het hele scherm */
+    width: 100%;
+    background: url('images/Collage.jpg') center center / cover no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.45);
+    /* subtiele overlay voor leesbaarheid */
+}
+
+.hero-content {
+    position: relative;
+    text-align: center;
+    z-index: 2;
+    color: #fff;
+}
+
+.hero-content h1 {
+    font-size: 3rem;
+    letter-spacing: 2px;
+    margin-bottom: 1rem;
+    color: #ff6b00;
+}
+
+.hero-content p {
+    font-size: 1.25rem;
+    margin-bottom: 2rem;
+    color: #e0e0e0;
+}
+
+.btn {
+    padding: 0.75rem 1.8rem;
+    background: #ff6b00;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+    border-radius: 4px;
+    transition: background 0.3s;
+}
+
+.btn:hover {
+    background: #e05a00;
+}
+
+/* Grid sectie (werken) */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 0;
+    margin-top: -4px;
+    /* minimal overlap of lijngevoel */
+}
+
+.card {
+    position: relative;
+    overflow: hidden;
+    height: 60vh;
+}
+
+.card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.card img:hover {
+    transform: scale(1.1);
+}
+
+.card h3 {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 1rem;
+    background: rgba(10, 10, 10, 0.8);
+    color: #fff;
+    font-size: 1.3rem;
+    border-top: 2px solid #ff6b00;
+}
+
+/* Over mij */
+.about {
+    display: flex;
+    align-items: center;
+    /* verticaal uitlijnen */
+    justify-content: center;
+    /* horizontaal centreren binnen de pagina */
+    padding: 6rem 8rem;
+    background: #121212;
+    gap: 4rem;
+    /* ruimte tussen foto en tekst */
+}
+
+.about-hero {
+    width: 300px;
+    max-width: 100%;
+    border-radius: 8px;
+    flex-shrink: 0;
+    /* voorkomt dat de afbeelding kleiner wordt gedrukt */
+}
+
+.about-text {
+    max-width: 600px;
+}
+
+.about-text h2 {
+    font-size: 2.4rem;
+    color: #ff6b00;
+    margin-bottom: 1rem;
+}
+
+.about-text p {
+    color: #d0d0d0;
+    line-height: 1.7;
+    font-size: 1.05rem;
+}
+
+/* Contact Section */
+.contact {
+    padding: 5rem 0;
+    background-color: #0a0a0a;
+    border-top: 1px solid #1f1f1f;
+}
+
+.contact .container {
+    max-width: 48rem;
+    margin: 0 auto;
+    /* 🔥 centreren */
+    text-align: center;
+}
+
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    font-size: 1.125rem;
+    flex-wrap: wrap;
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    .contact-item {
+        flex-direction: column;
+    }
+}
+
+.contact-icon {
+    color: #ff6b00;
+    flex-shrink: 0;
+}
+
+.contact-label {
+    color: #a6a6a6;
+}
+
+.contact-link {
+    color: #ff6b00;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.contact-link:hover {
+    text-decoration: underline;
+}
+
+.contact-text {
+    color: #fafafa;
+    font-weight: 500;
+}
+
+/* Footer */
+footer {
+    background: #000;
+    padding: 2rem;
+    text-align: center;
+    font-size: 0.9rem;
+    border-top: 1px solid #1a1a1a;
+    color: #666;
+}
+
+/* Responsiviteit */
+@media (max-width: 1024px) {
+    .about {
+        flex-direction: column;
+        padding: 4rem 2rem;
+    }
+
+    .about-hero {
+        margin: 0 0 2rem;
+    }
+
+    .grid {
+        margin-top: 0;
+    }
+}
+
+@media (max-width: 600px) {
+    .navbar {
+        padding: 0 1rem;
+    }
+
+    .hero-content h1 {
+        font-size: 2.2rem;
+    }
+
+    .hero-content p {
+        font-size: 1rem;
+    }
+
+    .btn {
+        padding: 0.6rem 1.4rem;
+    }
+
+    .about-text h2 {
+        font-size: 1.8rem;
+    }
+
+    .about-text p {
+        font-size: 0.95rem;
+    }
+}
+
+/* Portfolio sectie */
+.portfolio {
+    background: #0a0a0a;
+    padding: 6rem 8rem;
+    text-align: center;
+    overflow: hidden;
+}
+
+/* Sectietitel */
+.section-title {
+    font-size: 2.4rem;
+    color: #ff6b00;
+    margin-bottom: 3rem;
+    letter-spacing: 1px;
+}
+
+/* Grid-layout met drie kolommen */
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+    gap: 2rem;
+    width: 100%;
+}
+
+/* Tegel-stijl */
+.portfolio-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 16px;
+    /* lichte afronding */
+    height: 55vh;
+    background: #111;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 0.8s ease;
+}
+
+/* Fade-in animatie bij scroll */
+.portfolio-item.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Afbeelding */
+.portfolio-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+}
+
+/* Hover zoom */
+.portfolio-item:hover img {
+    transform: scale(1.08);
+    filter: brightness(0.5);
+}
+
+/* Overlay met titel/categorie in het midden */
+.portfolio-item .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(10, 10, 10, 0.7);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.portfolio-item:hover .overlay {
+    opacity: 1;
+}
+
+.overlay h3 {
+    color: #fff;
+    font-size: 1.4rem;
+    margin-bottom: 0.5rem;
+    letter-spacing: 0.5px;
+}
+
+.overlay p {
+    color: #ff6b00;
+    font-size: 1rem;
+    letter-spacing: 0.5px;
+}
+
+/* Verborgen extra projecten */
+.hidden-projects {
+    display: none;
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 0.6s ease;
+}
+
+.hidden-projects.show {
+    display: grid;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* “Meer bekijken” knop */
+.more-btn {
+    margin-top: 3rem;
+    padding: 0.8rem 2rem;
+    background: none;
+    border: 2px solid #ff6b00;
+    color: #ff6b00;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-radius: 8px;
+}
+
+.more-btn:hover {
+    background: #ff6b00;
+    color: #fff;
+    transform: translateY(-2px);
+}
+
+/* Responsiviteit */
+@media (max-width: 1024px) {
+    .portfolio-item {
+        height: 45vh;
+    }
+}
+
+@media (max-width: 768px) {
+    .portfolio {
+        padding: 4rem 2rem;
+    }
+
+    .portfolio-item {
+        height: 40vh;
+    }
+}
+
+.project-detail {
+    background-color: #0a0a0a;
+    padding: 8rem 2rem 4rem;
+    min-height: 100vh;
+    text-align: center;
+}
+
+.project-detail .container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.project-detail h1 {
+    color: #ff6b00;
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.project-category {
+    color: #aaa;
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+}
+
+.project-image {
+    width: 100%;
+    border-radius: 12px;
+    margin-bottom: 2rem;
+}
+
+.project-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+}
+
+.project-gallery img {
+    width: 100%;
+    border-radius: 12px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.project-gallery img:hover {
+    transform: scale(1.05);
+}
+
+.project-description {
+    max-width: 750px;
+    /* houdt de tekst prettig smal voor lezen */
+    margin: 0 auto 3rem;
+    /* centreert het blok, maar niet de tekst */
+    text-align: left;
+    /* tekst zelf is links uitgelijnd */
+    line-height: 1.8;
+    /* luchtiger regelafstand */
+    font-size: 1.05rem;
+    color: #e5e5e5;
+}
+
+.project-description h2 {
+    color: #ff6b00;
+    margin-bottom: 1.2rem;
+    font-size: 1.8rem;
+    text-align: left;
+    /* kop ook links uitgelijnd */
+}
+
+.project-description p {
+    margin-bottom: 1.4rem;
+}

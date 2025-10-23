@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="nl">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Portfolio — Mehdi van Bedaf</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="images/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="images/favicon.svg" />
+    <link rel="shortcut icon" href="images/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-title" content="Mehdi portfolio" />
+    <link rel="manifest" href="images/site.webmanifest" />
+</head>
+
+<body>
+
+    <!-- Navigatiebalk -->
+    <header class="navbar">
+        <div class="logo">
+            <a href="#home">
+                <div class="logo-image"></div>
+            </a>
+        </div>
+
+        <nav class="nav-links">
+            <a href="#home">Home</a>
+            <a href="#portfolio">Werk</a>
+            <a href="#about">Over mij</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <!-- Hero sectie -->
+    <section id="home" class="hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1>Mehdi van Bedaf</h1>
+            <p>Communicatie & Multimedia Designer</p>
+            <a href="#portfolio" class="btn">Bekijk werk</a>
+        </div>
+    </section>
+
+    <main>
+        <!-- Portfolio Sectie -->
+        <section id="portfolio" class="portfolio">
+            <h2 class="section-title">Mijn Werk</h2>
+
+            <div class="portfolio-grid">
+                <article class="portfolio-item">
+                    <a href="project1.html">
+                        <img src="images/Tshirt Mockup.png" alt="Project 1">
+                        <div class="overlay">
+                            <h3>Festival identiteit</h3>
+                            <p>Branding</p>
+                            <p>Meer zien →</p>
+                        </div>
+                    </a>
+                </article>
+
+                <article class="portfolio-item">
+                    <a href="project2.html">
+                        <img src="images/Instagram post.png" alt="Project 2">
+                        <div class="overlay">
+                            <h3>Instagram post voor TINC - Hallo?!</h3>
+                            <p>Grafisch</p>
+                            <p>Meer zien →</p>
+                        </div>
+                    </a>
+                </article>
+
+                <article class="portfolio-item">
+                    <a href="project3.html">
+                        <img src="images/Kroegentocht poster 17-10-2024.pdf" alt="Project 3">
+                        <div class="overlay">
+                            <h3>Kroegentocht poster voor BOLD</h3>
+                            <p>Grafisch</p>
+                            <p>Meer zien →</p>
+                        </div>
+                    </a>
+                </article>
+            </div>
+
+            <!-- Verborgen extra projecten -->
+            <div id="more-projects" class="portfolio-grid hidden-projects">
+                <article class="portfolio-item">
+                    <a href="project4.html">
+                        <img src="images/Quiet verzamelkaart 3.0.png" alt="Project 4">
+                        <div class="overlay">
+                            <h3>Maak lawaai voor stille armoede</h3>
+                            <p>Grafisch & Conceptueel ontwerp</p>
+                            <p>Meer zien →</p>
+                        </div>
+                    </a>
+                </article>
+
+                <article class="portfolio-item">
+                    <a href="project5.html">
+                        <img src="images/Mehdi_.png" alt="Project 5">
+                        <div class="overlay">
+                            <h3>Sticker Personal Branding</h3>
+                            <p>Grafisch</p>
+                            <p>Meer zien →</p>
+                        </div>
+                    </a>
+                </article>
+
+                <article class="portfolio-item">
+                    <a href="project6.html">
+                        <img src="images/Collage.jpg" alt="Project 6">
+                        <div class="overlay">
+                            <h3>Eigen project</h3>
+                            <p>Branding</p>
+                            <p>Meer zien →</p>
+                        </div>
+                    </a>
+                </article>
+            </div>
+
+            <button id="show-more-btn" class="more-btn">+ Meer bekijken</button>
+        </section>
+
+        <!-- Over mij -->
+        <section id="about" class="about">
+            <div class="about-text">
+                <h2>Over Mehdi</h2>
+                <p>Mehdi van Bedaf is een Nederlandse jonge maker die graag in zijn werken een ode doet aan “old school”
+                    stijlen uit de jaren ’80, ’90 en ’00. Zijn gemixte culturele achtergrond zorgt voor een brede blik
+                    op vormgeving, waarbij thema’s als saamhorigheid, verbinding en cultuur een belangrijke rol spelen.
+                    Naast zijn werk als grafisch ontwerper en fotograaf bij studievereniging BOLD, is Mehdi sinds
+                    september 2025 ook voorzitter van de vereniging.</p>
+            </div>
+        </section>
+
+        <!-- Contact -->
+        <section id="contact" class="contact">
+            <div class="container">
+                <h2 class="section-title">Contact</h2>
+
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <svg class="contact-icon" width="24" height="24" fill="none" stroke="currentColor"
+                            viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                        </svg>
+                        <span class="contact-label">E-mail:</span>
+                        <a href="mailto:mehdivanbedaf@gmail.com" class="contact-link">mehdivanbedaf@gmail.com</a>
+                    </div>
+
+                    <div class="contact-item">
+                        <svg class="contact-icon" width="24" height="24" fill="none" stroke="currentColor"
+                            viewBox="0 0 24 24">
+                            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                        </svg>
+                        <span class="contact-label">Instagram:</span>
+                        <a href="https://www.instagram.com/vbmehdi_076/" target="_blank" rel="noopener noreferrer"
+                            class="contact-link">@vbmehdi_076</a>
+                    </div>
+
+                    <div class="contact-item">
+                        <svg class="contact-icon" width="24" height="24" fill="none" stroke="currentColor"
+                            viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                        </svg>
+                        <span class="contact-label">Locatie:</span>
+                        <span class="contact-text">Breda, Nederland</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <p>© <span id="year"></span> Mehdi van Bedaf — Portfolio</p>
+            <p>Hosted by:</p>
+        </footer>
+
+        <script src="script.js"></script>
+    </main>
+</body>
+
+</html>
