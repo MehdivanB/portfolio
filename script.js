@@ -36,9 +36,4 @@ window.addEventListener('load', () => {
 });
 
 // Dropdown navigatie - alternatieve oplossing (voor kleinere schermen)
-document.querySelectorAll('.dropbtn').forEach(btn => {
-    btn.addEventListener('click', () => {
-        const content = btn.nextElementSibling;
-        content.style.display = content.style.display === 'block' ? 'none' : 'block';
-    });
-});
+// Note: dropdown helper removed — there is no dropdown markup in the current nav.

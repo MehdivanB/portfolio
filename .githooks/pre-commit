@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+# Simple pre-commit hook to run repository checks.
+# To enable locally: in the repo run:
+# git config core.hooksPath .githooks
+# then make this file executable: chmod +x .githooks/pre-commit
+
+echo "Running repository checks..."
+python3 scripts/check_site.py
+RC=$?
+if [ $RC -ne 0 ]; then
+  echo "Pre-commit checks failed (exit code $RC). Commit aborted. Fix issues and try again."
+  exit $RC
+fi
+echo "Pre-commit checks passed."
+exit 0

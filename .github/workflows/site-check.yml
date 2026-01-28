@@ -1,0 +1,28 @@
+name: site-checks
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+
+jobs:
+  checks:
+    name: Run repository checks
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
+
+      - name: Install dependencies (none required)
+        run: |
+          python3 -m pip install --upgrade pip
+
+      - name: Run site checks
+        run: |
+          python3 scripts/check_site.py
