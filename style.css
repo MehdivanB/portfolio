@@ -569,3 +569,37 @@ footer {
 .project-description p {
     margin-bottom: 1.4rem;
 }
+
+.news {
+    padding: 80px 10%;
+}
+
+.news-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: center;
+}
+
+.news-text h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.news-text p {
+    margin-bottom: 20px;
+    line-height: 1.6;
+    opacity: 0.9;
+}
+
+.news-embed {
+    display: flex;
+    justify-content: center;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    .news-container {
+        grid-template-columns: 1fr;
+    }
+}
