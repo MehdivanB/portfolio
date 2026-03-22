@@ -16,15 +16,22 @@ css_files = [ROOT / 'style.css'] if (ROOT / 'style.css').exists() else []
 
 refs = set()
 
-src_re = re.compile(r'src\s*=\s*"([^"]+)"')
-url_re = re.compile(r'url\(\s*["']?([^"')]+)["']?\s*\)')
+# match src attributes with either single or double quotes
+src_re = re.compile(r"src\s*=\s*(?:\"([^\"]+)\"|'([^']+)')")
+
+# match url(...) with optional single or double quotes around the path
+# use a raw triple-quoted string to avoid delimiter conflicts across environments
+url_re = re.compile(r'''url\(\s*(?:"([^"]*)"|'([^']*)'|([^\)]+))\s*\)''')
 
 def collect_from_file(path):
     text = path.read_text(encoding='utf-8', errors='ignore')
     for m in src_re.finditer(text):
         refs.add(m.group(1))
     for m in url_re.finditer(text):
-        refs.add(m.group(1))
+        # url_re has three capture groups; pick the first non-empty
+        val = m.group(1) or m.group(2) or m.group(3)
+        if val:
+            refs.add(val.strip())
 
 for f in html_files:
     collect_from_file(f)
