@@ -603,3 +603,11 @@ footer {
         grid-template-columns: 1fr;
     }
 }
+
+section {
+    scroll-margin-top: 100px;
+}
+
+body {
+    padding-top: 80px;
+}

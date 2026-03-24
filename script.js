@@ -34,6 +34,5 @@ window.addEventListener('load', () => {
     // ook direct de eerste items zichtbaar maken voor zekerheid
     portfolioItems.forEach(item => item.classList.add('visible'));
 });
-
 // Dropdown navigatie - alternatieve oplossing (voor kleinere schermen)
 // Note: dropdown helper removed — there is no dropdown markup in the current nav.
